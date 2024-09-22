@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment form</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <!-- start payment form -->
+  <body>
+    <div class="checkout-main-body">
+      <div class="blob"></div>
+      <div class="checkout-wrapper payment-wrapper ">
+          <span class="icon-close m-0"><a href="index.html" style="color: white; position: absolute; top:4px"><ion-icon name="close"></ion-icon></a></span>
+              
+          <div class="form-box ">
+              <h2 >Payment Form</h2>
+              
+              <form action="#">
+                  <div class="input-box">
+                      <input type="text" required>
+                      <label for="">Name of your bank account</label>
+                  </div>
+                  <div class="input-box">
+                      <input type="text" required>
+                      <label for="">Number of your bank account</label>
+                  </div>
+                  <div class="input-box">
+                      <input type="text" required>
+                      <label for="">Amount of money</label>
+                  </div> 
+                  <div class="p-0  m-0">
+                    <!-- check box  -->
+                    <input type="checkbox" id="sure" class="ms-2" style="border-color: #203e5d" />
+                      <label for="sure" class="ms-2" style="font-family: poppins"
+                      >Are you sure?</label
+                    >
+                    <!-- pay buttom -->
+                    <button class="button mt-4 submit submit-btn-form" style="margin-left: 45%; width: 45px">
+                      Pay
+                    </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  
+      <!-- icon link  -->
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script src="js/script.js"></script>
+  </body>
+</html>

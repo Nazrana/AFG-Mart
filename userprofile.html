@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-Profile</title>
+    <!-- css link  -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class=" myAccount-main-body">
+    <div class="blob"></div>
+    <div class="myAccount-wrapper">
+        <span class="icon-close"><a href="index.html" style="color: white;"><ion-icon name="close"></ion-icon></a></span>
+        <div class="form-box my-account">
+        <form action="#">
+            <h2>MY ACCOUNT</h2>
+            <!-- upload profile  -->
+            <div class="user-img">
+                <div class=" profile-card">
+                    <img src="img/user-img.jpg" alt="user-img" id="Profile-pic">
+                    <label class="profile-lable" for="input-file">Upload Profile</label>
+                    <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+                </div>
+            </div>
+            <!-- input boxes  -->
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" required>
+                <label for="">Username</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" required>
+                <label for="">Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="call"></ion-icon></span>
+                <input type="text" required>
+                <label for="">Phone</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="location"></ion-icon></span>
+                <input type="text" required>
+                <label for="">Address</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="text" required>
+                <label for="">Pervious Password</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" required>
+                <label for="">Password</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" required>
+                <label for="">Confirm Password</label>
+            </div>
+            <div class="remember-forgot">
+                <label for=""><input type="checkbox"> I agree to the terms & conditions.</label>
+            </div>
+            <button type="submit" class="btn form-btn pb-3">Update</button>
+        </form>
+    </div>
+</div>
+</div>
+    <!-- icon link  -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- java script link  -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFG Mart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/AFGMart- logo.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+
+   
+</head>
+<body >
+
+     <!--Navbar Start-->
+     <nav class="navbar navbar-expand-lg bg-light ">
+        <div class="container-fluid bg-light">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="img/AFGMart- logo.png" alt="AFG Mart" style="width:60px; height: 60px;">
+            </a>
+            <!-- Navbar Links -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  " id="navbarNav">
+                <ul class="navbar-nav me-auto   mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="All-Products.html">All Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutUs.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Icons -->
+                <div class="d-flex m-3 me-0">
+                    <button class="btn-search btn border border-primary  btn-outline-success btn-md-square rounded-circle bg-white me-4"  style="border-color: #F7931e;" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search " style="color: #F7931e;"></i></button>
+                    <a href="ShoppingCart.html" class="position-relative me-4 my-auto">
+                      <i class="fas fa-cart-shopping" style="color: #F7931e; scale: 1.5;" ></i>
+                        <span class="position-absolute badge text-bg-primary rounded-circle d-flex align-items-center justify-content-center text-white " style="top: -5px; left: 15px; height: 15px; min-width: 15px; width:15px ;">3</span>
+                    </a>
+                    <a href="login-register-forms.html" class="my-auto">
+                        <i class="fas fa-user fa-2x " style="color: #F7931e; scale: 0.9;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- Navbar End -->
+      <!-- Modal Search Start -->
+      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center">
+                    <div class="input-group w-75 mx-auto d-flex">
+                      <span id="search-icon" class="input-group-text">
+                        <!-- Dropdown Menu for Category -->
+                        <div class="dropdown">
+                          <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Clothes</a></li>
+                            <li><a class="dropdown-item" href="#">Jewelry</a></li>
+                            <li><a class="dropdown-item" href="#">Shoes</a></li>
+                            <li><a class="dropdown-item" href="#">Bags</a></li>
+                          </ul>
+                        </div>
+                      </span>
+                        <input type="search " class="form-control " placeholder="Search" aria-describedby="search-icon-1">
+                        <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Search End -->
+
+
+<!--slide show-->
+<div id="carouselExampleIndicators" class="carousel slide mb-5">
+    <div class="carousel-indicators">
+      <button type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="btn-warning active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active ">
+        <div class="d-flex carousel-caption align-items-center justify-content-center"><P> Shop unique clothing, shoes, and accessories at AFG Mart.</P>
+        </div>
+        <img src="img/Banner01.jpg" class="d-block w-100" alt="..." style="height: 400px;">
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex carousel-caption align-items-center justify-content-center"><p> Wear the essence of Afghanistan. AFG Mart is timeless fashion, made for you.</p>
+        </div>
+        <img src="img/banner02.jpg" class="d-block w-100" alt="..." style="height: 400px;">
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex carousel-caption align-items-center justify-content-center"><p> Step into Afghan elegance with our handcrafted clothes and jewelry.</p>
+        </div>
+        <img src="img/Banner03.jpg" class="d-block w-100" alt="..." style="height: 400px;">
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex carousel-caption align-items-center justify-content-center"><p> AFG Mart – your source for stunning traditional fashion.</p>
+        </div>
+        <img src="img/banner04.jpg" class="d-block w-100" alt="..." style="height: 400px;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon btn btn-secondary px-0" style="width: 30px; height: 30px;background-color: #ccb397;border:1px solid #ccb397 ; border-radius: 45px;" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon btn btn-secondary px-0" style="width: 30px; height: 30px; background-color: #ccb397;border:1px solid #ccb397 ; border-radius: 45px;" aria-hidden="true"></span>
+      <span class="visually-hidden btn btn-secondary px-0" style="width: 30px; height: 30px;">Next</span>
+    </button>
+  </div>
+<!--Slide show end-->
+
+<!--Services Section Start-->
+<div class="container-fluid pt-5 mb-5">
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-3 col-sm-6  ">
+            <div class="d-flex  services align-items-center bg-light " style="padding: 30px;">
+              <img src="img/GIF/verified.gif" alt="" style="width: 50px; height: 50px;">
+                <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6  ">
+            <div class="d-flex services align-items-center bg-light " style="padding: 30px;">
+                <img src="img/GIF/free-delivery.gif" alt="" style="width: 50px; height: 50px;">
+                <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6  ">
+            <div class="d-flex services align-items-center bg-light " style="padding: 30px;">
+                <img src="img/GIF/return-of-investment.gif" alt="" style="width: 50px; height: 50px;">
+                <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 ">
+            <div class="d-flex services align-items-center bg-light " style="padding: 30px;">
+                <img src="img/GIF/phone.gif" alt="" style="width: 50px; height: 50px;">
+                <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Services Section End-->
+
+<!--Categories Section Start-->
+<div class="container my-5" >
+    <div style="display: flex; margin: 40px; align-items: center; font-weight: bold;"><h2 style="margin: 0 10px 0 0; "> Categories </h2><hr style="flex-grow: 1;  border: 1px solid black;"></div>
+    <div class="row justify-content-center my-md-3">
+        <div class="col-lg-3 col-md-4 mb-5 mx-5">
+            <div class="category-card">
+              <a href="product-clothes.html">
+                <img src="img/clothes-cat.jpg" alt="Clothes">
+                <div class="category-title">Clothes</div>
+                <div class="product-count">10 Products</div>
+              </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-5 mx-5">
+            <div class="category-card">
+              <a href="product-jewelry.html">
+                <img src="img/jewelry-cat.jpg" alt="Jewelry">
+                <div class="category-title">Jewelry</div>
+                <div class="product-count">10 Products</div>
+              </a>
+            </div>
+        </div>
+        </div>
+        <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-4 mb-5 mx-5">
+            <div class="category-card">
+              <a href="products-shose.html">
+                <img src="img/shoes-cat.jpg" alt="Shoes">
+                <div class="category-title">Shoes</div>
+                <div class="product-count">10 Products</div>
+              </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-5 mx-5">
+            <div class="category-card">
+              <a href="product-bag.html">
+                <img src="img/bags-cat.jpg" alt="Bags">
+                <div class="category-title">Bags</div>
+                <div class="product-count">10 Products</div>
+              </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Categories Section End-->
+
+
+
+<!--Addvertising Section Start-->    
+<div class="container-fluid my-5 Advertising-section">
+  <div class="afghan-style-section">
+    <div class="row align-items-center">
+      <div class="col-md-8 text-center">
+        <h2 class="section-title mt-5">Your source for Afghan style</h2>
+        <button class="  add-cart-btn  my-4"><i class="fa-solid fa-cart-shopping" style="color:white;"></i> Add Cart</button>
+      </div>
+      <div class="col-md-4">
+        <div class="image-container">
+          <img src="img/Jewelry/Jew-24.PNG" alt="Jew-01" class="img-fluid main-image" >
+          <div class="circle circle-1"></div>
+          <div class="circle circle-2"></div>
+          <div class="circle circle-3"></div>
+          <div class="product-code rounded-circle">Jew-01</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+<!--Addvertising Section End-->
+
+
+
+
+<!--Month deal Section Start-->
+<div class="container-fluid my-5 bg-light month-deal-container">
+  <div class="row align-items-center text-center justify-content-center">
+    <div class="col-md-5 my-5 ">
+      <div class="deal-image  ">
+        <div class="back-circle align-items-center">
+        <img src="img/Jewelry/Jew-02.png" alt="JEW-02 Ring" class="img-fluid">
+        <span class="discount-badge">20% OFF</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 ">
+      <h2 class="deal-title">Deal of the month</h2>
+      <p class="deal-code mb-5">JEW-02</p>
+      <div class="countdown-timer text-center justify-content-center">
+        <div class="timer-item">
+          <span class="timer-value">29</span>
+          <span class="timer-label">Days</span>
+        </div>
+        <div class="timer-item">
+          <span class="timer-value">23</span>
+          <span class="timer-label">Hours</span>
+        </div>
+        <div class="timer-item">
+          <span class="timer-value">58</span>
+          <span class="timer-label">Mins</span>
+        </div>
+        <div class="timer-item">
+          <span class="timer-value">30</span>
+          <span class="timer-label">Secs</span>
+        </div>
+      </div>
+      <button class="  add-cart-btn1  my-4"><i class="fa-solid fa-cart-shopping" style="color:white;"></i> Add Cart</button>
+    </div>
+  </div>
+</div>
+<!--Month deal Section End-->
+
+
+
+
+
+<!--Best Seller Products Section Start-->
+
+<div class="container best-sell-pro-all ">
+  <div style="display: flex; margin: 40px; align-items: center; font-weight: bold;"><h2 style="margin: 0 10px 0 0; "> Best Seller Products </h2><hr style="flex-grow: 1;  border: 1px solid black;"></div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 best-seller-pro">
+    <!-- Product Card 1 -->
+    <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Clothes/clo-05.png" alt="Clothes" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Clothes</h5>
+            <p class="card-text">500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 2 -->
+    <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Jewelry/Jew-02.png" alt="Jewelry" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Jewelry</h5>
+            <p class="card-text">500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Card 3 -->
+    <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Shoes/Sh-07.png" alt="shoes" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Shoes</h5>
+            <p class="card-text">500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Product Card 4 -->
+    <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Clothes/clo-20.png" alt="Clothes" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Clothes</h5>
+            <p class="card-text">2500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Card 5 -->
+    <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Shoes/Sh-12.png" alt="shoes" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Shoes</h5>
+            <p class="card-text">2500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 6 -->
+    <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Jewelry/Jew-10.png" alt="jewelry" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Jewelry</h5>
+            <p class="card-text">2500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Product Card 7 -->
+     <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Clothes/clo-11.png" alt="Clothes" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Clothes</h5>
+            <p class="card-text">1500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Product Card 8 -->
+     <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Shoes/Sh-08.png" alt="shoes" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Shoes</h5>
+            <p class="card-text">1500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Product Card 9 -->
+     <div class="col-md-4">
+      <div class="card product-card">
+        <div class="card-body">
+          <div class="product-image">
+            <img src="img/Jewelry/Jew-11.png" alt="jewelry" class="img-fluid">
+          </div>
+          <div class="card-second-part justify-content-center text-center ">
+            <h5 class="card-title">Jewelry</h5>
+            <p class="card-text">1500 AF</p>
+            <button class="  add-cart-btn2  my-4"><i class="fa-solid fa-cart-shopping" style="color:rgb(237, 174, 0);"></i> Add Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Repeat the above structure for the remaining 6 cards -->
+  </div>
+</div>
+<!--Best Seller Products Section End-->
+
+
+
+
+
+
+
+
+
+<!--Game-Play Section Star-->
+<div class="container-fluid my-5" >
+    <div class="row align-items-center p-3 promo-section my-5" >
+      <div class="col-md-5 text-center">
+        <h2 class="promo-title">Play Game</h2>
+        <p class="promo-subtitle">Give up to <br> 10% off</p>
+      </div>
+      <div class="col-md-3 text-center my-5">
+        <div class="play-button">
+          <a href="game-information.html"><img src="img/GIF/play (1).gif" alt="" style="width: 120px; height: 120px;"></a>
+        </div>
+      </div>
+      <div class="col-md-4 text-right my-2">
+        <img src="img/gameIcone.png" alt="Game Controller" class="img-fluid promo-image">
+      </div>
+    </div>
+  </div>
+<!--Game-Play Section End-->
+
+
+
+
+
+
+
+    
+
+<!-- Footer Start -->
+      <footer>
+      <div class="container-fluid pt-4  footer-info" >
+        <div class="row ">
+              
+            <div class="col-lg-5 col-md-6 footer-logo">
+              <img src="img/AFGMart- logo.png" alt="" width="150px" height="150px">
+              <div class=" social-icons mt-1 mb-2  p-2 btn-social footer-logo" >
+                  <a class="" href="#"><i class="fab fa-facebook-f" style="color: #f2f2f2;"></i></a>
+                  <a class="" href="#"><i class="fab fa-instagram" style="color: #f2f2f2;"></i></a>
+                  <a class="" href="#"><i class="fab fa-twitter" style="color: #f2f2f2;"></i></a>
+              </div>
+          </div> 
+          
+          <div class="col-lg-4 col-md-6 ">
+              <h4 class="font-weight-semi-bold  mb-4" style="color: #F7931e;">Get in Touch</h4>
+              <p><i class="fa fa-map-marker-alt  mr-2" style="color: #f2f2f2;"></i> Herat, Mahtab Street  </p>
+              <p><i class="fa fa-phone-alt  mr-2" style="color: #f2f2f2;"></i> 009379999999  </p>
+              <p><i class="fa fa-envelope  mr-2" style="color: #f2f2f2;"></i> afgmart@gmail.com</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 ">
+              <h4 class="font-weight-semi-bold  mb-4" style="color: #F7931e;">Quick Links</h4>
+              <div class="d-flex flex-column quick-links justify-content-start">
+                  <a class="text-white mb-2" href="index.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>Home</a>
+                  <a class="text-white mb-2" href="All-Products.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>All Products  </a>
+                  <a class="text-white mb-2" href="AboutUs.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>About Us </a>
+                  <a class="text-white mb-2" href="ContactUs.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>Contact </a>
+              </div>
+          </div>
+        </div>
+    </div>
+            <div class=" text-center text-md-left footer">
+                <b class="m-0 text-dark">Copyright &copy; 2024 AFG Mart</b>
+            </div>
+    </footer>
+    <!-- Footer End -->
+    <script src="js/script.js"></script>
+</body>
+</html>

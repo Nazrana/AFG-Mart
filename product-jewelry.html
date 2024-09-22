@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AFG Mart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/AFGMart- logo.png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+    />
+  </head>
+  <body>
+      <!--Navbar Start-->
+      <nav class="navbar navbar-expand-lg bg-light ">
+        <div class="container-fluid bg-light">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="img/AFGMart- logo.png" alt="AFG Mart" style="width:60px; height: 60px;">
+            </a>
+            <!-- Navbar Links -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  " id="navbarNav">
+                <ul class="navbar-nav me-auto   mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link "  href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="All-Products.html">All Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutUs.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Icons -->
+                <div class="d-flex m-3 me-0">
+                    <button class="btn-search btn border border-primary  btn-outline-success btn-md-square rounded-circle bg-white me-4"  style="border-color: #F7931e;" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search " style="color: #F7931e;"></i></button>
+                    <a href="ShoppingCart.html" class="position-relative me-4 my-auto">
+                      <i class="fas fa-cart-shopping" style="color: #F7931e; scale: 1.5;" ></i>
+                        <span class="position-absolute badge text-bg-primary rounded-circle d-flex align-items-center justify-content-center text-white " style="top: -5px; left: 15px; height: 15px; min-width: 15px; width:15px ;">3</span>
+                    </a>
+                    <a href="login-register-forms.html" class="my-auto">
+                        <i class="fas fa-user fa-2x " style="color: #F7931e; scale: 0.9;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- Navbar End -->
+      <!-- Modal Search Start -->
+      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center">
+                    <div class="input-group w-75 mx-auto d-flex">
+                      <span id="search-icon" class="input-group-text">
+                        <!-- Dropdown Menu for Category -->
+                        <div class="dropdown">
+                          <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Clothes</a></li>
+                            <li><a class="dropdown-item" href="#">Jewelry</a></li>
+                            <li><a class="dropdown-item" href="#">Shoes</a></li>
+                            <li><a class="dropdown-item" href="#">Bags</a></li>
+                          </ul>
+                        </div>
+                      </span>
+                        <input type="search " class="form-control " placeholder="Search" aria-describedby="search-icon-1">
+                        <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Search End -->
+
+    <!-- header start -->
+
+    <div class="row">
+      <div
+        class="col container-xl d-flex justify-content-start text-white p-4 ms-2 fw-bold fs-5"
+        style="background-color: #f7931e"
+      >
+        <h4 class="heading">Embrace Afghan culture today.</h4>
+      </div>
+      <div
+        class="image col d-flex justify-content-end"
+        style="background-color: #f7931e"
+      >
+        <img
+          src="img/Jewelry/Jew-10.png"
+          class="me-3 ms-3 mt-1"
+          alt=""
+          style="width: 90px; height: 80px"
+        /><img
+          src="img/Jewelry/Jew-23.png"
+          class="me-3 ms-3"
+          alt=""
+          style="width: 90px; height: 110px"
+        /><img
+          src="img/Jewelry/Jew-20.png"
+          class="me-3 ms-3"
+          alt=""
+          style="width: 110px; height: 110px"
+        />
+      </div>
+    </div>
+    <!-- header end -->
+
+    <!-- main start -->
+    <div class="container">
+      <div class="ms-4 mt-4 ps-4 pt-4">
+        <h1 style="color: #203e5d">Jewelry Category</h1>
+      </div>
+      <div class="row ps-4 g-3 ms-4">
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-07.png"
+              alt=""
+              class="position-relative"
+              style="width: 250px; bottom: 55px; left: 7px; height: 320px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-01</h1>
+              <h6>1000AF</h6>
+            </div>
+
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-02.png"
+              alt=""
+              class="position-relative"
+              style="width: 250px; bottom: 30px; left: 10px; height: 250px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-02</h1>
+              <h6>1000AF</h6>
+            </div>
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-20.png"
+              alt=""
+              class="position-relative"
+              style="width: 290px; bottom: 54px; right: 6px; height: 290px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-03</h1>
+              <h6>1000AF</h6>
+            </div>
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-05.png"
+              alt=""
+              class="position-relative"
+              style="width: 190px; bottom: 80px; left: 35px; height: 310px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-04</h1>
+              <h6>1000AF</h6>
+            </div>
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-23.png"
+              alt=""
+              class="position-relative"
+              style="width: 250px; bottom: 56px; left: 4px; height: 300px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-05</h1>
+              <h6>1000AF</h6>
+            </div>
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-14.png"
+              alt=""
+              class="position-relative"
+              style="width: 240px; bottom: 30px; left: 1px; height: 230px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-06</h1>
+              <h6>1000AF</h6>
+            </div>
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-04.png"
+              alt=""
+              class="position-relative"
+              style="width: 300px; bottom: 95px; right: 10px; height: 320px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-07</h1>
+              <h6>1000AF</h6>
+            </div>
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-12.png"
+              alt=""
+              class="position-relative"
+              style="width: 230px; bottom: 30px; left: 15px; height: 220px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-08</h1>
+              <h6>1000AF</h6>
+            </div>
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+          <div class="circleShape">
+            <img
+              src="img/Jewelry/Jew-10.png"
+              alt=""
+              class="position-relative"
+              style="width: 260px; bottom: 13px; height: 210px"
+            />
+          </div>
+          <div class="rectangularShape border border-3 bg-white">
+            <div class="pb-4">
+              <h1>Jewelry-09</h1>
+              <h6>1000AF</h6>
+            </div>
+            <button>
+              <a href="" style="  color: white;"
+                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
+                Cart</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br />
+    <!-- main end -->
+
+    <!-- Footer Start -->
+    <footer>
+      <div class="container-fluid pt-4 footer-info">
+        <div class="row">
+          <div class="col-lg-5 col-md-6 footer-logo">
+            <img
+              src="img/AFGMart- logo.png"
+              alt=""
+              width="150px"
+              height="150px"
+            />
+            <div class="social-icons mt-1 mb-2 p-2 btn-social footer-logo">
+              <a class="" href="#"
+                ><i class="fab fa-facebook-f" style="color: #f2f2f2"></i
+              ></a>
+              <a class="" href="#"
+                ><i class="fab fa-instagram" style="color: #f2f2f2"></i
+              ></a>
+              <a class="" href="#"
+                ><i class="fab fa-twitter" style="color: #f2f2f2"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <h4 class="font-weight-semi-bold mb-4" style="color: #f7931e">
+              Get in Touch
+            </h4>
+            <p>
+              <i class="fa fa-map-marker-alt mr-2" style="color: #f2f2f2"></i>
+              Herat, Mahtab Street
+            </p>
+            <p>
+              <i class="fa fa-phone-alt mr-2" style="color: #f2f2f2"></i>
+              009379999999
+            </p>
+            <p>
+              <i class="fa fa-envelope mr-2" style="color: #f2f2f2"></i>
+              afgmart@gmail.com
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h4 class="font-weight-semi-bold mb-4" style="color: #f7931e">
+              Quick Links
+            </h4>
+            <div class="d-flex flex-column quick-links justify-content-start">
+              <a class="text-white mb-2" href="index.html">
+                <i class="fa fa-angle-right mr-2" style="color: #f2f2f2"></i
+                >Home</a
+              >
+              <a class="text-white mb-2" href="#">
+                <i class="fa fa-angle-right mr-2" style="color: #f2f2f2"></i>All
+                Products
+              </a>
+              <a class="text-white mb-2" href="#">
+                <i class="fa fa-angle-right mr-2" style="color: #f2f2f2"></i
+                >About Us
+              </a>
+              <a class="text-white mb-2" href="#">
+                <i class="fa fa-angle-right mr-2" style="color: #f2f2f2"></i
+                >Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-md-left footer">
+        <b class="m-0 text-dark">Copyright &copy; 2024 AFG Mart</b>
+      </div>
+    </footer>
+    <!-- Footer End -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
