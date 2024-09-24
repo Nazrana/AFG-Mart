@@ -17,7 +17,7 @@ function login(){
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
-    if (email === 'admin@gmail.com' && password === '1234') {
+    if (email === 'admin@' && password === '1234') {
         window.location.href = 'AdminPanel/AdminPanel.html';
     } else {
         alert('Invalid login. Please try again.');
