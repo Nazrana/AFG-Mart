@@ -282,6 +282,18 @@ body {
   color: #203e5d;
   padding: 0 20px 0 5px;
 }
+@media (max-width: 768px){
+  .profile-form {
+    width: 300px;
+    margin: 50px auto;
+  }
+
+  .input-box {
+    position: relative;
+    width: 230px;
+    margin: 10px 0;
+  }
+}
 .input-box .icon {
   position: absolute;
   right: 8px;
