@@ -1073,6 +1073,7 @@ background: linear-gradient(to right,#c37e0f,#ffc108);
   left: 50%;
   text-align: center;
   width: 20%;
+  color:#000;
   transform: translate(-50%, -50%);
   background: rgb(112, 117, 117);
   background: linear-gradient(
