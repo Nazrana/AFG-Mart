@@ -59,37 +59,43 @@
         </div>
     </nav>
 <!-- Navbar End -->
-      <!-- Modal Search Start -->
-      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center">
-                    <div class="input-group w-75 mx-auto d-flex">
-                      <span id="search-icon" class="input-group-text">
-                        <!-- Dropdown Menu for Category -->
-                        <div class="dropdown">
-                          <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
+     <!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+          <div class="modal-header">
+              <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex flex-column align-items-center">
+              <div class="input-group w-75 mx-auto d-flex">
+                  <span id="search-icon" class="input-group-text">
+                      <!-- Dropdown Menu for Category -->
+                      <div class="dropdown">
+                          <button class="btn dropdown-toggle" type="button" id="categoryButton" data-bs-toggle="dropdown" aria-expanded="false">
+                              Category
                           </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Clothes</a></li>
-                            <li><a class="dropdown-item" href="#">Jewelry</a></li>
-                            <li><a class="dropdown-item" href="#">Shoes</a></li>
-                            <li><a class="dropdown-item" href="#">Bags</a></li>
+                          <ul class="dropdown-menu" aria-labelledby="categoryButton">
+                              <li><a class="dropdown-item" href="#" data-category="clothes">Clothes</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="jewelry">Jewelry</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="shoes">Shoes</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="bags">Bags</a></li>
                           </ul>
-                        </div>
-                      </span>
-                        <input type="search " class="form-control " placeholder="Search" aria-describedby="search-icon-1">
-                        <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal Search End -->
+                      </div>
+                  </span>
+                  <input type="search" class="form-control" placeholder="Search" id="searchInput" aria-describedby="search-icon-1">
+                  <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
+              </div>
+
+              <!-- Search Results (Cards will be inserted here) -->
+              <div class="container  w-75 mt-4" id="searchResults">
+              
+                  <!-- Cards will appear here dynamically -->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Modal Search End -->
 
   <!-- Shopping Cart Start -->
 
@@ -98,54 +104,31 @@
       <h1 class=" ms-5 text-start" style="font-family: poppins; margin-top: 70px;">
         Shopping Cart
       </h1>
+      <button type="button" onclick="applyDiscount()" class="p-2 shopping-card-btn " id="useDiscount" style="font-family: poppins; margin-left: 60%;">use disscount</button>
+
       <div class="row align-items-start">
         <div class="col-md-7 mt-5 me-4 h-100 shopping-image">
           <!-- name of product -->
-          <h3 class="name-product m-3"><span class="nameOFproduct">Sh-</span><span class="numOFproduct">01</span></h3>
+          <h3 class="name-product m-3"><span class="nameOFproduct cart-title1">Sh-01</span></h3>
           <div class="container text-center">
             <div class="row">
               <!-- some pictures about product -->
-              <div class="col-md mainImage">
+              <div class="col-md mainImage ">
                 <!-- main image -->
                 <img
                   src="img/Shoes/Sh-01.png"
                   alt="Sh-01"
-                  class="img-thumbnail mt-3"
+                  class="img-thumbnail mt-3 cart-image1"
                   style="border-color: #f7931e; border-width: 2px"
                 />
-                <div class="row">
-                  <!-- a section of picture  -->
-                  <div class="col">
-                    <img
-                      src="img/Shoes/Sh-01.png"
-                      alt="Sh-01"
-                      class="img-thumbnail picture-product mt-2 w-100 pic-1"
-                    />
-                  </div>
-                  <!-- a section of picture  -->
-                  <div class="col">
-                    <img
-                      src="img/Shoes/Sh-01.png"
-                      alt="Sh-01"
-                      class="img-thumbnail picture-product mt-2 w-100 pic-2"
-                    />
-                  </div>
-                  <!-- a section of picture  -->
-                  <div class="col">
-                    <img
-                      src="img/Shoes/Sh-01.png"
-                      alt="Sh-01"
-                      class="img-thumbnail  picture-product mt-2 w-100 pic-3"
-                    />
-                  </div>
-                </div>
+                
               </div>
               <div class="col-md">
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2 text-start">
                     <!-- name of category -->
                     <p style="font-weight: bold; font-family: poppins">
-                      Product: <span class="name-category"> Shoes</span>
+                      Product: <span class="name-category cart-title1"> Shoes</span>
                     </p>
                   </div>
                   <div class="p-2 text-start">
@@ -175,7 +158,7 @@
                   <!-- price of product -->
                   <div class="p-2 text-start">
                     <p style="font-family: poppins; font-size: 20px">
-                      Price: <span class="price-product">800</span> AFS
+                      Price: <span class="price-product cart-price1" id="price-product">800 </span>
                     </p>
                   </div>
                   <!-- colors of product -->
@@ -183,15 +166,7 @@
                     <p style="font-family: poppins; font-size: 20px">
                       Colors:
                     </p>
-                    <button 
-                      type="button"
-                      style="
-                        background-color: #f7931e;
-                        width: 25px;
-                        height: 25px;
-                        border-radius: 50px;
-                      "
-                    ></button>
+                    
                     <button 
                       type="button"
                       style="
@@ -211,15 +186,7 @@
                       "
                     ></button>
                     
-                    <button 
-                      type="button"
-                      style="
-                        background-color: #0a0a0a;
-                        width: 25px;
-                        height: 25px;
-                        border-radius: 100px;
-                      "
-                    ></button>
+                    
                     <button 
                       type="button"
                       style="
@@ -249,7 +216,7 @@
                   id="numberProduct"
                   class="numberProduct"
                   placeholder="1"
-                  value=""
+                  value="1"
                   style="
                     width: 15%;
                     border-color: #f7931e;
@@ -259,9 +226,9 @@
               </div>
               <!-- total of price about one product -->
               <div class="col-md mb-5">
-                <p style="font-family: poppins; font-size: 20px">
-                  Total of Price: <span class="Total-of-Price">0</span>
-                </p>
+                <button class="button p-2 calcu " style="color: #ffffff">
+                  Claculate Total of Price: 
+                </button> <span class="Total-of-Price" style="font-family: poppins; font-size: 20px;">0</span>
               </div>
             </div>
           </div>
@@ -269,7 +236,7 @@
           <div class="container text-center mb-4">
             <div class="row">
               <div class="col-md">
-                <button 
+                <button onclick="addToCart()"
                   type="button"
                   class="button w-50 h-75 m-2 add-button shopping-card-btn"
                   style="font-family: poppins"
@@ -295,13 +262,13 @@
             <!--  Number of All products -->
             <div class="p-2">
               <p style="font-size: 20px">
-                Number of All products: <span class="Number-of-All-products">0</span>
+                Number of All products: <span class="Number-of-All-products" id="all_number">0</span>
               </p>
             </div>
             <!-- Total of All prices -->
             <div class="p-2">
               <p style="font-size: 20px">
-                Total of All prices: <span class="Total-of-All-prices">0</span>
+                Total of All prices: <span class="Total-of-All-prices" id="all_price">0</span>
               </p>
             </div>
             <!-- Delet All Products -->
@@ -331,53 +298,223 @@
   </main>
 
 
-
-
-
-
-
-
-
-    
-
-   
 <!-- Footer Start -->
 <footer>
-    <div class="container-fluid pt-4  footer-info" >
-      <div class="row ">
-            
-          <div class="col-lg-5 col-md-6 footer-logo">
-            <img src="img/AFGMart- logo.png" alt="" width="150px" height="150px">
-            <div class=" social-icons mt-1 mb-2  p-2 btn-social footer-logo" >
-                <a class="" href="#"><i class="fab fa-facebook-f" style="color: #f2f2f2;"></i></a>
-                <a class="" href="#"><i class="fab fa-instagram" style="color: #f2f2f2;"></i></a>
-                <a class="" href="#"><i class="fab fa-twitter" style="color: #f2f2f2;"></i></a>
-            </div>
-        </div> 
-        
-        <div class="col-lg-4 col-md-6 ">
-            <h4 class="font-weight-semi-bold  mb-4" style="color: #F7931e;">Get in Touch</h4>
-            <p><i class="fa fa-map-marker-alt  mr-2" style="color: #f2f2f2;"></i> Herat, Mahtab Street  </p>
-            <p><i class="fa fa-phone-alt  mr-2" style="color: #f2f2f2;"></i> 009379999999  </p>
-            <p><i class="fa fa-envelope  mr-2" style="color: #f2f2f2;"></i> afgmart@gmail.com</p>
-        </div>
+  <div class="container-fluid pt-4  footer-info" >
+    <div class="row ">
+          
+        <div class="col-lg-5 col-md-6 footer-logo">
+          <img src="img/AFGMart- logo.png" alt="" width="150px" height="150px">
+          <div class=" social-icons mt-1 mb-2  p-2 btn-social footer-logo" >
+              <a class="" href="#"><i class="fab fa-facebook-f" style="color: #f2f2f2;"></i></a>
+              <a class="" href="#"><i class="fab fa-instagram" style="color: #f2f2f2;"></i></a>
+              <a class="" href="#"><i class="fab fa-twitter" style="color: #f2f2f2;"></i></a>
+          </div>
+      </div> 
+      
+      <div class="col-lg-4 col-md-6 ">
+          <h4 class="font-weight-semi-bold  mb-4" style="color: #F7931e;">Get in Touch</h4>
+          <p><i class="fa fa-map-marker-alt  mr-2" style="color: #f2f2f2;"></i> Herat, Mahtab Street  </p>
+          <p><i class="fa fa-phone-alt  mr-2" style="color: #f2f2f2;"></i> 009379999999  </p>
+          <p><i class="fa fa-envelope  mr-2" style="color: #f2f2f2;"></i> afgmart@gmail.com</p>
+      </div>
 
-        <div class="col-lg-3 col-md-6 ">
-            <h4 class="font-weight-semi-bold  mb-4" style="color: #F7931e;">Quick Links</h4>
-            <div class="d-flex flex-column quick-links justify-content-start">
+      <div class="col-lg-3 col-md-6 ">
+          <h4 class="font-weight-semi-bold  mb-4" style="color: #F7931e;">Quick Links</h4>
+          <div class="d-flex flex-column quick-links justify-content-start">
               <a class="text-white mb-2" href="index.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>Home</a>
               <a class="text-white mb-2" href="All-Products.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>All Products  </a>
               <a class="text-white mb-2" href="AboutUs.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>About Us </a>
               <a class="text-white mb-2" href="ContactUs.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>Contact </a>
-           </div>
-        </div>
-      </div>
-  </div>
-          <div class=" text-center text-md-left footer">
-              <b class="m-0 text-dark">Copyright &copy; 2024 AFG Mart</b>
           </div>
-  </footer>
-  <!-- Footer End -->
-  <script src="js/script.js"></script>
+      </div>
+    </div>
+</div>
+        <div class=" text-center text-md-left footer" >
+            <b class="m-0 text-dark">Copyright &copy; 2024 AFG Mart</b>
+        </div>
+</footer>
+<!-- Footer End -->
+
+
+
+  <script>
+    
+        document.addEventListener("DOMContentLoaded", function() {
+          
+          const all_number =parseInt(document.getElementById("numberProduct").value);
+          localStorage.setItem("all_number", all_number);
+          console.log(all_number);
+        // Retrieve data from localStorage
+        const imageSrc = localStorage.getItem("imageSrc");
+        const productName = localStorage.getItem("productName");
+        const productPrice = localStorage.getItem("productPrice");
+
+        
+        const cartImage = document.querySelector('.cart-image1');
+        const cartTitle = document.querySelectorAll('.cart-title1');
+        const cartPrice = document.querySelector('.cart-price1');
+
+        if (imageSrc && productName && productPrice) {
+          cartImage.src = imageSrc; 
+            
+            cartTitle.forEach(title => {
+                title.innerText = productName;  // Update  product title
+            }); 
+            cartPrice.innerText = productPrice;  // Update product price
+        }
+    });
+
+
+
+    const totalofPrice = document.querySelector(".Total-of-Price");
+// a function for calculate money and saving money
+function calcu() {
+  const productPriceValue = parseInt(
+    document.getElementById("price-product").innerText
+  );
+  // console.log(productPriceValue);
+  const inputValue = parseInt(document.getElementById("numberProduct").value);
+  console.log(inputValue);
+  let total = productPriceValue * inputValue;
+  console.log(total);
+  totalofPrice.textContent = total;
+  localStorage.setItem("quantity", inputValue);
+  localStorage.setItem("total", total);
+}
+
+// click on calculate totall of price butoon
+const calculate_total_value = document.querySelector(".calcu");
+calculate_total_value.addEventListener("click", calcu);
+
+// calculate numbers of all products
+
+function calcu_total() {
+  const inputValue = parseInt(document.getElementById("numberProduct").value);
+  let numberALLProduct = 0;
+  numberALLProduct += inputValue;
+  console.log(numberALLProduct);
+
+  const number_All_products = document.getElementById("all_number");
+  number_All_products.textContent = numberALLProduct;
+
+  const productPriceValue = parseInt(
+    document.getElementById("price-product").innerText
+  );
+
+  let total = productPriceValue * inputValue;
+  let totalPrice = 0;
+  totalPrice += total;
+  console.log(totalPrice);
+  const priceOFtotal = document.getElementById("all_price");
+  priceOFtotal.textContent = totalPrice;
+}
+// click on ADD button
+const add = document.querySelector(".add-button");
+add.addEventListener("click", calcu_total);
+
+
+
+
+
+// click on delet button to clean all of products
+
+const delet_data = document.querySelector(".delet-button");
+
+delet_data.addEventListener("click", function () {
+  delet();
+});
+function delet() {
+  const number_All_products = document.getElementById("all_number");
+  const priceOFtotal = document.getElementById("all_price");
+  number_All_products.textContent = 0;
+  priceOFtotal.textContent = 0;
+  const delet_shop = document.querySelector(".shop");
+  const add_text = document.querySelector(".shop-text");
+  delet_shop.classList.add("no_active");
+  add_text.classList.remove("no_active");
+}
+
+
+
+function addToCart() {
+    // Retrieve input value from the numberProduct input field
+    const productQuantity = parseFloat(document.getElementById("numberProduct").value);
+
+    // Retrieve other data from localStorage
+    const imageSrc = localStorage.getItem("imageSrc");
+    const productName = localStorage.getItem("productName");
+    const productPrice = parseFloat(localStorage.getItem("productPrice"));
+
+    // Retrieve or initialize the cart from localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if product already exists in the cart
+    const existingProductIndex = cart.findIndex(product => product.name === productName);
+
+    if (existingProductIndex > -1) {
+        // If it exists, increase the quantity
+        cart[existingProductIndex].quantity += productQuantity;
+    } else {
+        // Otherwise, add a new product to the cart
+        cart.push({
+            img: imageSrc,
+            name: productName,
+            price: productPrice,
+            quantity: productQuantity,
+        });
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
+
+
+
+
+function applyDiscount() {
+        let productPrice = localStorage.getItem('productPrice');
+        
+        // Check if productPrice exists in localStorage
+        if (productPrice) {
+            productPrice = parseFloat(productPrice); // Convert it to a number
+            
+            // Calculate 10% discount
+            const discount = productPrice * 0.10;
+            const newPrice = productPrice - discount;
+            
+            // Update the price in localStorage
+            localStorage.setItem('productPrice', newPrice.toFixed(0));
+            
+            // Update the total price display in the span
+            const totalPriceElement = document.querySelector('.Total-of-Price');
+            totalPriceElement.innerText = newPrice.toFixed(0); 
+            
+            // Hide the discount button
+            const discountButton = document.getElementById('useDiscount');
+            discountButton.style.display = 'none'; 
+        } else {
+            alert("No product price found in localStorage!");
+        }
+    }
+
+    //load the price from localStorage on page load
+    function loadPrice() {
+        const productPrice = localStorage.getItem('productPrice');
+        if (productPrice) {
+            const totalPriceElement = document.querySelector('.Total-of-Price');
+            totalPriceElement.innerText = parseFloat(productPrice).toFixed(0);
+        }
+    }
+
+    // Call this function when the page loads to display the price from localStorage
+    window.onload = loadPrice;
+
+  </script>
+      <script src="js/search.js"></script>
+
+
 </body>
 </html>
