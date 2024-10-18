@@ -18,85 +18,84 @@
 <body >
 
      <!--Navbar Start-->
-     <nav class="navbar navbar-expand-lg bg-light ">
-        <div class="container-fluid bg-light">
-            <!-- Logo -->
-            <a class="navbar-brand" href="index.html">
-                <img src="img/AFGMart- logo.png" alt="AFG Mart" style="width:60px; height: 60px;">
-            </a>
-            <!-- Navbar Links -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse  " id="navbarNav">
-                <ul class="navbar-nav me-auto   mb-lg-0 ">
-                    <li class="nav-item">
-                        <a class="nav-link active"  href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="All-Products.html">All Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="AboutUs.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ContactUs.html">Contact</a>
-                    </li>
-                </ul>
+   <nav class="navbar navbar-expand-lg bg-light ">
+    <div class="container-fluid bg-light">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+            <img src="img/AFGMart- logo.png" alt="AFG Mart" style="width:60px; height: 60px;">
+        </a>
+        <!-- Navbar Links -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse  " id="navbarNav">
+            <ul class="navbar-nav me-auto   mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link active"  href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="All-Products.html">All Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AboutUs.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="ContactUs.html">Contact</a>
+                </li>
+            </ul>
 
-                <!-- Icons -->
-                <div class="d-flex m-3 me-0">
-                    <button class="btn-search btn border border-primary  btn-outline-success btn-md-square rounded-circle bg-white me-4"  style="border-color: #F7931e;" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search " style="color: #F7931e;"></i></button>
-                    <a href="ShoppingCart.html" class="position-relative me-4 my-auto">
-                      <i class="fas fa-cart-shopping" style="color: #F7931e; scale: 1.5;" ></i>
-                        <span class="position-absolute badge text-bg-primary rounded-circle d-flex align-items-center justify-content-center text-white " style="top: -5px; left: 15px; height: 15px; min-width: 15px; width:15px ;">3</span>
-                    </a>
-                    <a href="#" class="my-auto">
-                      <img src="img/userProfile.png" alt="user icon" id="user-icon" class="user-icon" onclick="checkLoginStatus()" style="width: 35px; height: 35px;">  
-                      <!-- <i class="fas fa-user fa-2x " style="color: #F7931e; scale: 0.9;"></i> -->
-                    </a>
+            <!-- Icons -->
+            <div class="d-flex m-3 me-0">
+                <button class="btn-search btn border border-primary  btn-outline-success btn-md-square rounded-circle bg-white me-4"  style="border-color: #F7931e;" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search " style="color: #F7931e;"></i></button>
+                <a href="ShoppingCart.html" class="position-relative me-4 my-auto">
+                  <i class="fas fa-cart-shopping" style="color: #F7931e; scale: 1.5;" ></i>
+                    <span class="position-absolute badge text-bg-primary rounded-circle d-flex align-items-center justify-content-center text-white " style="top: -5px; left: 15px; height: 15px; min-width: 15px; width:15px ;">3</span>
+                </a>
+                <a href="#" class="my-auto">
+                    <img src="img/userProfile.png" alt="user icon" id="user-icon" class="user-icon" onclick="checkLoginStatus()" style="width: 35px; height: 35px;">  
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+ <!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center">
+                <div class="input-group w-75 mx-auto d-flex">
+                    <span id="search-icon" class="input-group-text">
+                        <!-- Dropdown Menu for Category -->
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="categoryButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Category
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="categoryButton">
+                                <li><a class="dropdown-item" href="#" data-category="clothes">Clothes</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="jewelry">Jewelry</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="shoes">Shoes</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="bags">Bags</a></li>
+                            </ul>
+                        </div>
+                    </span>
+                    <input type="search" class="form-control" placeholder="Search" id="searchInput" aria-describedby="search-icon-1">
+                    <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
+                </div>
+  
+                <!-- Search Results (Cards will be inserted here) -->
+                <div class="container  w-75 mt-4" id="searchResults">
+                
+                    <!-- Cards will appear here dynamically from search.js file -->
                 </div>
             </div>
         </div>
-    </nav>
-<!-- Navbar End -->
-        <!-- Modal Search Start -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content rounded-0">
-          <div class="modal-header">
-              <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body d-flex flex-column align-items-center">
-              <div class="input-group w-75 mx-auto d-flex">
-                  <span id="search-icon" class="input-group-text">
-                      <!-- Dropdown Menu for Category -->
-                      <div class="dropdown">
-                          <button class="btn dropdown-toggle" type="button" id="categoryButton" data-bs-toggle="dropdown" aria-expanded="false">
-                              Category
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="categoryButton">
-                              <li><a class="dropdown-item" href="#" data-category="clothes">Clothes</a></li>
-                              <li><a class="dropdown-item" href="#" data-category="jewelry">Jewelry</a></li>
-                              <li><a class="dropdown-item" href="#" data-category="shoes">Shoes</a></li>
-                              <li><a class="dropdown-item" href="#" data-category="bags">Bags</a></li>
-                          </ul>
-                      </div>
-                  </span>
-                  <input type="search" class="form-control" placeholder="Search" id="searchInput" aria-describedby="search-icon-1">
-                  <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
-              </div>
-
-              <!-- Search Results (Cards will be inserted here) -->
-              <div class="container  w-75 mt-4" id="searchResults">
-              
-                  <!-- Cards will appear here dynamically -->
-              </div>
-          </div>
-      </div>
+    </div>
   </div>
-</div>
-<!-- Modal Search End -->
+  <!-- Modal Search End -->
 
 
 <!--slide show-->
@@ -314,7 +313,7 @@
 
       <div class="col-md-3 text-center  justify-content-center align-items-center">
         <div id="fPlayIcon" class="mx-auto justify-content-center text-center" >
-          <a href="game-information.html">
+          <a href="game.html">
         <i class="fas fa-play fa-2x text-center"  style="color: #F7931e; scale: 2; position: relative; top:40px ;" ></i>
       </a>
       </div>
