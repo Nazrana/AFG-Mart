@@ -76,45 +76,51 @@
                   <i class="fas fa-cart-shopping" style="color: #F7931e; scale: 1.5;" ></i>
                     <span class="position-absolute badge text-bg-primary rounded-circle d-flex align-items-center justify-content-center text-white " style="top: -5px; left: 15px; height: 15px; min-width: 15px; width:15px ;">3</span>
                 </a>
-                <a href="login-register-forms.html" class="my-auto">
-                    <i class="fas fa-user fa-2x " style="color: #F7931e; scale: 0.9;"></i>
+                <a href="#" class="my-auto">
+                    <img src="img/userProfile.png" alt="user icon" id="user-icon" class="user-icon" onclick="checkLoginStatus()" style="width: 35px; height: 35px;">  
                 </a>
             </div>
         </div>
     </div>
 </nav>
 <!-- Navbar End -->
-  <!-- Modal Search Start -->
-  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content rounded-0">
             <div class="modal-header">
                 <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body d-flex align-items-center">
+            <div class="modal-body d-flex flex-column align-items-center">
                 <div class="input-group w-75 mx-auto d-flex">
-                  <span id="search-icon" class="input-group-text">
-                    <!-- Dropdown Menu for Category -->
-                    <div class="dropdown">
-                      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Category
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Clothes</a></li>
-                        <li><a class="dropdown-item" href="#">Jewelry</a></li>
-                        <li><a class="dropdown-item" href="#">Shoes</a></li>
-                        <li><a class="dropdown-item" href="#">Bags</a></li>
-                      </ul>
-                    </div>
-                  </span>
-                    <input type="search " class="form-control " placeholder="Search" aria-describedby="search-icon-1">
+                    <span id="search-icon" class="input-group-text">
+                        <!-- Dropdown Menu for Category -->
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="categoryButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Category
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="categoryButton">
+                                <li><a class="dropdown-item" href="#" data-category="clothes">Clothes</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="jewelry">Jewelry</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="shoes">Shoes</a></li>
+                                <li><a class="dropdown-item" href="#" data-category="bags">Bags</a></li>
+                            </ul>
+                        </div>
+                    </span>
+                    <input type="search" class="form-control" placeholder="Search" id="searchInput" aria-describedby="search-icon-1">
                     <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
+                </div>
+  
+                <!-- Search Results (Cards will be inserted here) -->
+                <div class="container  w-75 mt-4" id="searchResults">
+                
+                    <!-- Cards will appear here dynamically from search.js file -->
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Modal Search End -->
+  </div>
+  <!-- Modal Search End -->
 
 
 
@@ -211,5 +217,7 @@
   <!-- Footer End -->
 
   <script src="js/script.js"></script>
+  <script src="js/search.js"></script>
+
 </body>
 </html>
