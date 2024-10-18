@@ -71,346 +71,217 @@
         </div>
     </nav>
 <!-- Navbar End -->
-      <!-- Modal Search Start -->
-      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center">
-                    <div class="input-group w-75 mx-auto d-flex">
-                      <span id="search-icon" class="input-group-text">
-                        <!-- Dropdown Menu for Category -->
-                        <div class="dropdown">
-                          <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
+    <!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+          <div class="modal-header">
+              <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex flex-column align-items-center">
+              <div class="input-group w-75 mx-auto d-flex">
+                  <span id="search-icon" class="input-group-text">
+                      <!-- Dropdown Menu for Category -->
+                      <div class="dropdown">
+                          <button class="btn dropdown-toggle" type="button" id="categoryButton" data-bs-toggle="dropdown" aria-expanded="false">
+                              Category
                           </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Clothes</a></li>
-                            <li><a class="dropdown-item" href="#">Jewelry</a></li>
-                            <li><a class="dropdown-item" href="#">Shoes</a></li>
-                            <li><a class="dropdown-item" href="#">Bags</a></li>
+                          <ul class="dropdown-menu" aria-labelledby="categoryButton">
+                              <li><a class="dropdown-item" href="#" data-category="clothes">Clothes</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="jewelry">Jewelry</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="shoes">Shoes</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="bags">Bags</a></li>
                           </ul>
-                        </div>
-                      </span>
-                        <input type="search " class="form-control " placeholder="Search" aria-describedby="search-icon-1">
-                        <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal Search End -->
+                      </div>
+                  </span>
+                  <input type="search" class="form-control" placeholder="Search" id="searchInput" aria-describedby="search-icon-1">
+                  <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
+              </div>
+
+              <!-- Search Results (Cards will be inserted here) -->
+              <div class="container  w-75 mt-4" id="searchResults">
+              
+                  <!-- Cards will appear here dynamically -->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Modal Search End -->
 
     <!-- header start -->
 
- 
-     <div class="row">
-      <div
-        class="col container-xl d-flex justify-content-start text-white p-4 ms-2 fw-bold fs-5"
-        style="background-color: #f7931e"
-      >
+    <div class="row">
+      <div class="col container-xl d-flex justify-content-start text-white p-4 ms-2 fw-bold fs-5" style="background-color: #f7931e" >
         <h4 class="heading">Embrace Afghan culture today.</h4>
       </div>
-      <div
-        class="image col d-flex justify-content-end"
-        style="background-color: #f7931e"
-      >
-        <img src="img/Bags/bag-13.png" class="me-3 ms-3 mt-1" alt="" /><img
-          src="img/Bags/bag-02.png"
-          class="me-3 ms-3"
-          alt=""
-        /><img src="img/Bags/bag-06.png" class="me-3 ms-3" alt="" />
+      <div class="image col d-flex justify-content-end" style="background-color: #f7931e">
+        <img src="img/Bags/bag-13.png" class="me-3 ms-3 mt-1" alt="" />
+        <img src="img/Bags/bag-02.png" class="me-3 ms-3" alt="" />
+        <img src="img/Bags/bag-06.png" class="me-3 ms-3" alt="" />
       </div>
     </div>
     <!-- header end -->
-    
-    <!-- main start -->
-    <div class="container">
-      <div class="ms-4 mt-4 ps-4 pt-4">
-        <h1 style="color: #203e5d">Bag Category</h1>
-      </div>
-      <div class="row ps-4 g-3 ms-4">
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-03.png"
-              alt=""
-              class="position-relative"
-              style="width: 260px; bottom: 85px; right: 6px; height: 280px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-01</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-02.png"
-              alt=""
-              class="position-relative"
-              style="width: 240px; bottom: 40px; left: 10px; height: 240px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-02</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-10.png"
-              alt=""
-              class="position-relative"
-              style="width: 260px; bottom: 35px; height: 260px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-03</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-13.png"
-              alt=""
-              class="position-relative"
-              style="width: 260px; bottom: 35px; right: 15px; height: 260px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-04</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-05.png"
-              alt=""
-              class="position-relative"
-              style="width: 300px; bottom: 65px; height: 300px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-05</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-08.png"
-              alt=""
-              class="position-relative"
-              style="width: 220px; bottom: 17px; left: 30px; height: 300px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-06</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-01.png"
-              alt=""
-              class="position-relative"
-              style="width: 270px; bottom: 45px; right: 5px; height: 270px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-07</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-04.png"
-              alt=""
-              class="position-relative"
-              style="width: 270px; bottom: 50px; left: 10px; height: 260px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-08</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
-          <div class="circleShape">
-            <img
-              src="img/Bags/bag-12.png"
-              alt=""
-              class="position-relative"
-              style="width: 330px; bottom: 70px; right: 20px; height: 300px"
-            />
-          </div>
-          <div class="rectangularShape border border-3 bg-white">
-            <div class="pb-4">
-              <h1>Bag-09</h1>
-              <h6>1000AF</h6>
-            </div>
-            <button>
-              <a href="" style="  color: white;"
-                ><i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add
-                Cart</a
-              >
-            </button>
-          </div>
-        </div>
+     <!-- main start -->
+     <div class="container">
+      <div class="ms-4 mt-4 ps-4 pt-4 "> <h1 style="color: #203e5d">Clothes Category</h1> </div> 
+      <div class="row ps-4 g-3 ms-4 mb-5 bags-list">
+       <!-- product list generated by JS -->
       </div>
     </div>
-    <br /><br /><br /><br />
     <!-- main end -->
 
-    <!-- Footer Start -->
-    <footer>
-      <div class="container-fluid pt-4 footer-info">
-        <div class="row">
-          <div class="col-lg-5 col-md-6 footer-logo">
-            <img
-              src="img/AFGMart- logo.png"
-              alt=""
-              width="150px"
-              height="150px"
-            />
-            <div class="social-icons mt-1 mb-2 p-2 btn-social footer-logo">
-              <a class="" href="#"
-                ><i class="fab fa-facebook-f" style="color: #f2f2f2"></i
-              ></a>
-              <a class="" href="#"
-                ><i class="fab fa-instagram" style="color: #f2f2f2"></i
-              ></a>
-              <a class="" href="#"
-                ><i class="fab fa-twitter" style="color: #f2f2f2"></i
-              ></a>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6">
-            <h4 class="font-weight-semi-bold mb-4" style="color: #f7931e">
-              Get in Touch
-            </h4>
-            <p>
-              <i class="fa fa-map-marker-alt mr-2" style="color: #f2f2f2"></i>
-              Herat, Mahtab Street
-            </p>
-            <p>
-              <i class="fa fa-phone-alt mr-2" style="color: #f2f2f2"></i>
-              009379999999
-            </p>
-            <p>
-              <i class="fa fa-envelope mr-2" style="color: #f2f2f2"></i>
-              afgmart@gmail.com
-            </p>
-          </div>
 
-          <div class="col-lg-3 col-md-6">
-            <h4 class="font-weight-semi-bold mb-4" style="color: #f7931e">
-              Quick Links
-            </h4>
-            <div class="d-flex flex-column quick-links justify-content-start">
-              <a class="text-white mb-2" href="index.html">
-                <i class="fa fa-angle-right mr-2" style="color: #f2f2f2"></i
-                >Home</a
-              >
-              <a class="text-white mb-2" href="#">
-                <i class="fa fa-angle-right mr-2" style="color: #f2f2f2"></i>All
-                Products
-              </a>
-              <a class="text-white mb-2" href="#">
-                <i class="fa fa-angle-right mr-2" style="color: #f2f2f2"></i
-                >About Us
-              </a>
-              <a class="text-white mb-2" href="#">
-                <i class="fa fa-angle-right mr-2" style="color: #f2f2f2"></i
-                >Contact
-              </a>
-            </div>
+
+<!-- Footer Start -->
+<footer>
+  <div class="container-fluid pt-4  footer-info" >
+    <div class="row ">
+          
+        <div class="col-lg-5 col-md-6 footer-logo">
+          <img src="img/AFGMart- logo.png" alt="" width="150px" height="150px">
+          <div class=" social-icons mt-1 mb-2  p-2 btn-social footer-logo" >
+              <a class="" href="#"><i class="fab fa-facebook-f" style="color: #f2f2f2;"></i></a>
+              <a class="" href="#"><i class="fab fa-instagram" style="color: #f2f2f2;"></i></a>
+              <a class="" href="#"><i class="fab fa-twitter" style="color: #f2f2f2;"></i></a>
           </div>
+      </div> 
+      
+      <div class="col-lg-4 col-md-6 ">
+          <h4 class="font-weight-semi-bold  mb-4" style="color: #F7931e;">Get in Touch</h4>
+          <p><i class="fa fa-map-marker-alt  mr-2" style="color: #f2f2f2;"></i> Herat, Mahtab Street  </p>
+          <p><i class="fa fa-phone-alt  mr-2" style="color: #f2f2f2;"></i> 009379999999  </p>
+          <p><i class="fa fa-envelope  mr-2" style="color: #f2f2f2;"></i> afgmart@gmail.com</p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 ">
+          <h4 class="font-weight-semi-bold  mb-4" style="color: #F7931e;">Quick Links</h4>
+          <div class="d-flex flex-column quick-links justify-content-start">
+              <a class="text-white mb-2" href="index.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>Home</a>
+              <a class="text-white mb-2" href="All-Products.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>All Products  </a>
+              <a class="text-white mb-2" href="AboutUs.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>About Us </a>
+              <a class="text-white mb-2" href="ContactUs.html"> <i class="fa fa-angle-right m-1" style="color: #f2f2f2;"></i>Contact </a>
+          </div>
+      </div>
+    </div>
+</div>
+        <div class=" text-center text-md-left footer">
+            <b class="m-0 text-dark">Copyright &copy; 2024 AFG Mart</b>
         </div>
-      </div>
-      <div class="text-center text-md-left footer">
-        <b class="m-0 text-dark">Copyright &copy; 2024 AFG Mart</b>
-      </div>
-    </footer>
-    <!-- Footer End -->
+</footer>
+<!-- Footer End -->
 
+
+
+
+
+    <script>
+      //array for Bags products
+        const bags_products = [
+            {
+                name: "Bags-01",
+                price: "2500 AF",
+                img: "img/Bags/bag-01.png"
+            },
+            {
+                name: "Bags-02",
+                price: "2500 AF",
+                img: "img/Bags/bag-02.png"
+            },
+            {
+                name: "Bags-03",
+                price: "2500 AF",
+                img: "img/Bags/bag-05.png"
+            },
+            {
+                name: "Bags-04",
+                price: "2500 AF",
+                img: "img/Bags/bag-06.png"
+            },
+            {
+                name: "Bags-05",
+                price: "2500 AF",
+                img: "img/Bags/bag-08.png"
+            },
+            {
+                name: "Bags-06",
+                price: "2500 AF",
+                img: "img/Bags/bag-09.png"
+            },
+            {
+                name: "Bags-07",
+                price: "2500 AF",
+                img: "img/Bags/bag-10.png"
+            },
+            {
+                name: "Bags-08",
+                price: "2500 AF",
+                img: "img/Bags/bag-12.png"
+            },
+            {
+                name: "Bags-09",
+                price: "2500 AF",
+                img: "img/Bags/bag-13.png"
+            }
+          ]
+          
+      // Function to generate product cards
+  function generateBagsProductCards() {
+      const productContainer = document.querySelector('.bags-list'); 
+
+      // Loop to create each product in HTML dynamically
+      bags_products.forEach((product, index) => {
+          const productCard = `
+          <div class="col-lg-4 col-sm-10 col-md-6 m-auto">
+              <div class="circleShape">
+                <img src="${product.img}" alt="${product.name}" class="imageToPass position-relative" style="width: 230px; bottom: 30px; left: 18px; height: 270px"/>
+              </div>
+              <div class="rectangularShape border border-3 bg-white">
+                <div class="pb-4">
+                  <h1 class="product-title">${product.name}</h1>
+                  <h6 class="product-price">${product.price}</h6>
+                </div>
+                <button class="passImage" data-index="${index}">
+                  <a href="ShoppingCart.html" style="color: white;">
+                    <i class="fas fa-cart-shopping" style="color: #ffffff"></i> Add to Cart
+                  </a>
+                </button>
+              </div>
+            </div>
+          `;
+
+          // Append cards to the container
+          productContainer.insertAdjacentHTML('beforeend', productCard);
+      });
+      // I have written this code inside of function because products generated dynamically so EventListener can find classes to give products details like: img, title and price 
+      document.querySelectorAll('.passImage').forEach((button, index) => {
+          button.addEventListener('click', function (e) {
+              e.preventDefault(); // Prevent the default link behavior
+              
+              const product = bags_products[index];
+
+              // Save the product details to localStorage
+              localStorage.setItem("imageSrc", product.img);
+              localStorage.setItem("productName", product.name);
+              localStorage.setItem("productPrice", product.price);
+
+              // redirect to shopping cart
+              window.location.href = "ShoppingCart.html";
+          });
+      });
+  }
+
+  // Call the function on page load
+  document.addEventListener("DOMContentLoaded", generateBagsProductCards);
+
+        
+    </script>
 
     <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+
   </body>
 </html>
