@@ -96,15 +96,13 @@
             <h5 class="add-product-title text-center ">Add Product</h5>
 
             <div class="add-product-card p-4">
-              <form>
+              <form id="productForm" onsubmit="addProduct(event)">
                 <!-- Product Images -->
                 <div class="mb-5">
-                  <label for="productImages" class="form-label ">Product Images</label>
+                  <label for="productImage1" class="form-label ">Product Images</label>
                   <div class="d-flex mt-2">
                     <input type="file" class="form-control me-2" id="productImage1" accept="image/*">
-                    <input type="file" class="form-control me-2" id="productImage2" accept="image/*">
-                    <input type="file" class="form-control me-2" id="productImage3" accept="image/*">
-                    <input type="file" class="form-control" id="productImage4" accept="image/*">
+                    <img id="productImagePreview" src="" alt="Product Image Preview" style="display: none; width: 80px; height: auto;">
                   </div>
                 </div>
           
@@ -124,8 +122,15 @@
                 <div class="d-flex  mb-3">
                   <label for="price" class="form-label mx-1">Price</label>
                   <div class="input-group">
-                    <input type="number" class="form-control" id="price" placeholder="Enter price">
+                    <input type="number" class="form-control" id="productPrice" placeholder="Enter price">
                     <span class="input-group-text">AF</span>
+                  </div>
+                </div> 
+                <!-- Price -->
+                <div class="d-flex  mb-3">
+                  <label for="productStock" class="form-label mx-1" > Stock</label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="productStock" placeholder="Enter quantity">
                   </div>
                 </div>
           
@@ -135,16 +140,16 @@
                     <!-- Colors -->
                     <div class="d-flex m-4">
                         <label for="colorPick" class="form-label mx-1">Color </label>
-                        <input type="color" id="colorPick" name="color" value="#F7931e">
+                        <input type="color" id="product_color" name="color" value="#F7931e">
                     </div>
                     
                     <!-- Category -->
-                  <select class="form-select m-4 mx-5">
+                  <select class="form-select m-4 mx-5" id="productCategory">
                     <option selected>Select Category</option>
-                    <option value="1">Clothes</option>
-                    <option value="2">Shoes</option>
-                    <option value="3">Bags</option>
-                    <option value="4">Jewelry</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="shoes">Shoes</option>
+                    <option value="bags">Bags</option>
+                    <option value="jewelry">Jewelry</option>
                   </select>
                 </div>
           
@@ -161,6 +166,73 @@
   </div>
 </div>
       
+  <script>
 
+console.log(document.getElementById('productCategory').value);
+function addProduct(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+
+    const img = document.getElementById('productImagePreview');
+    const pro_name = document.getElementById('productName').value;
+    const pro_description = document.getElementById('productDescription').value;
+    const pro_price = document.getElementById('productPrice').value;
+    const pro_color = document.getElementById('product_color').value;
+    const pro_stock = document.getElementById('productStock').value;
+    const pro_category=document.getElementById('productCategory').value;
+
+    // Retrieve existing products from localStorage or create a new array
+    const productList = JSON.parse(localStorage.getItem('products')) || [];
+
+    // Add the new product to the array
+    const newProduct = {
+        name: pro_name,
+        price: pro_price + " AF",
+        img: img.src,
+        description: pro_description,
+        color: pro_color,
+        stock: pro_stock,
+        category: pro_category 
+    };
+
+    productList.push(newProduct);
+
+    // Save the updated product list back to localStorage
+    localStorage.setItem('products', JSON.stringify(productList));
+
+    // Redirect to product list page
+    window.location.href = "AdminPanel-ProductList.html";
+}
+
+document.getElementById('productImage1').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const img = document.getElementById('productImagePreview');
+        img.src = e.target.result; // Set the image source to the uploaded file
+        img.style.display = 'block'; // Show the image
+    };
+
+    if (file) {
+        reader.readAsDataURL(file); // Read the file as a data URL
+    }
+});
+
+document.getElementById('productImage1').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const img = document.getElementById('productImagePreview');
+        img.src = e.target.result; // Set the image source to the uploaded file
+        img.style.display = 'block'; // Show the image
+    };
+
+    if (file) {
+        reader.readAsDataURL(file); // Read the file as a data URL
+    }
+});
+    
+  </script>
 </body>
 </html>
