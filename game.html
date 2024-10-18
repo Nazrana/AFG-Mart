@@ -14,47 +14,148 @@
   </head>
   <!-- star DICE GAME -->
   <body style="background-color: #ebd3d3">
-    <div class="main game-main-section w-50 mx-auto mt-5">
-      <div class="d-flex flex-column mb-3 text-center mt-3">
-        <!-- close button -->
-       <a href="index.html"> <button
-          type="button"
-          class="btn-close game-btn-close  me-2 mt-2"
-          aria-label="Close"
-        ></button></a>
-        <div class="p-2 mt-3">
-          <!-- name of game -->
-          <h2 class=" " style="font-family: poppins">DICE GAME</h2>
-        </div>
-        <!-- photoes of dice -->
-        <div class="p-2 mt-3">
-          <img src="img/DiceGame/dice-5.png" alt="dice-5" class="rounded mx-auto" style="width: 25%;" />
-        </div>
-        <!-- HOLD icon for saving point -->
-        <div class="p-2 mt-3">
-          <button class="button game-btn" style="font-family: poppins; width: 130px">
-            HOLD
-          </button>
-          <!-- ROLL icon for playing -->
-        </div>
-        <div class="p-2 mt-3">
-          <button
-            class="button game-btn"
-            style="font-family: poppins; font-weight: bold; width: 100px"
-          >
-            ROLL
-          </button>
-          <!-- thid section is for showing piont -->
-        </div>
-        <div class="p-2 mt-3 mb-4">
-          <button class="button point game-btn">
-            POINT<br /><span style="font-weight: bold">5</span>
-          </button>
+      <div class="main game-main-section w-50 mx-auto mt-5">
+        <div class="d-flex flex-column mb-3 text-center mt-3">
+          <!-- close button -->
+          <a href="index.html"> <button
+            type="button"
+            class="btn-close game-btn-close  me-2 mt-2"
+            aria-label="Close"
+          ></button></a>
+          <div class="p-2 mt-3">
+            <!-- name of game -->
+            <h2 class=" " style="font-family: poppins">DICE GAME</h2>
+          </div>
+          <!-- photoes of dice -->
+          <div class="p-2 mt-3">
+            <img
+              src="img/DiceGame/dice-5.png"
+              alt="dice-5"
+              class="rounded mx-auto dice"
+              style="width: 25%"
+            />
+          </div>
+          <!-- HOLD icon for saving point -->
+          <div class="p-2 mt-3">
+            <button class="button hold game-btn" style="font-family: poppins; width: 130px">
+              HOLD
+            </button>
+            <!-- ROLL icon for playing -->
+          </div>
+          <div class="p-2 mt-3">
+            <button
+              class="button roll game-btn"
+              style="font-family: poppins; font-weight: bold; width: 100px"
+            >
+              ROLL
+            </button>
+            <!-- thid section is for showing piont -->
+          </div>
+          <div class="p-2 mt-3 mb-4">
+            <button class="button point game-btn">
+              POINT<br /><span style="font-weight: bold" class="score">5</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
+    <div class="hide">
+   <div class="modle my-2 "><p style="font-size:0.8rem;">you can click on <b>ROLL</b> and take point for 
+        discount, when roll is <b>1</b>,your point will
+        be <b>0</b> so you can stop roll with <b>HOLD</b>,and
+        according your point, you can use discount, if score is 20,disscount will be 10%, if score is more than 20,disscount will be 12%,otherwise you don't have disscount.</p>
+      </div>
+
+        <div class="my-5 mt-5">
+           <button  class="btn-start my-5">START</button>
+        </div>
+        <div class="overlay "></div>
+</div>
 
 
-    <script src="js/script.js"></script>
+
+        <!-- when player have been game over, this section will show -->
+      <div class="game_over_hide no_active">
+        <!-- close button -->
+       <a href="index.html" target="_blank"> <button
+          type="button"
+          class="btn-close me-2 mt-2 close-game-over"
+          aria-label="Close"
+        ></button></a>
+        <div class="game-over">
+          <p>GAME OVER</p>
+        </div>
+        <div class="overlay"></div>
+      </div>
+      <!-- whin player click on hold's button, this section will show -->
+      <div class="win_hide no_active">
+
+        <div class="game-over">
+          <p>YOU WIN</p>
+        </div>
+        <!-- using disscount -->
+        <div>
+          <a href="ShoppingCart.html"><button  class="discount">USE DISSCOUNT</button></a>
+          </div>
+        <div class="overlay"></div>
+      </div>
+
+
+
+        <script>
+          // start game
+const score_0 = document.querySelector(".score");
+const dice_pic = document.querySelector(".dice");
+const hide_information = document.querySelector(".hide");
+const start_game = document.querySelector(".btn-start");
+const roll_game = document.querySelector(".roll");
+const hold_game = document.querySelector(".hold");
+const hide_game_over = document.querySelector(".game_over_hide");
+const hide_win = document.querySelector(".win_hide");
+
+// click start's button to start game
+start_game.addEventListener("click", function() {
+  hide_information.classList.add("no_active");
+  score_0.textContent = 0;
+  dice_pic.classList.add("no_active");
+  hold_game.classList.add("no_active");
+});
+
+// at fist point is 0
+let dice_num = 0;
+// click roll's button to play game
+roll_game.addEventListener("click", function () {
+  hold_game.classList.remove("no_active");
+  // make a random number for dice
+  const dicRandomNumber = Math.trunc(Math.random() * 6) + 1;
+  console.log(dicRandomNumber);
+  // change dice picture
+  dice_pic.src = `img/DiceGame/dice-${dicRandomNumber}.png`;
+  dice_pic.classList.remove("no_active");
+  //   a condition for dice
+  //  if dice is not 1, score will save for disscount
+  if (dicRandomNumber !== 1) {
+    dice_num += dicRandomNumber;
+    score_0.textContent = dice_num;
+  }
+  //   if dice's number is 1 , player  will be game over
+  else {
+    hide_game_over.classList.remove("no_active");
+    alert("Sorry! Dice is 1, you can not play this game again.");
+  }
+  localStorage.setItem("score", dice_num);
+
+});
+// click on hold's button to save point for disscount
+hold_game.addEventListener("click", function () {
+  hide_win.classList.remove("no_active");
+});
+// game finished
+
+
+        </script>
+
+
+        
   </body>
 </html>
