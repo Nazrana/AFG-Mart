@@ -57,46 +57,51 @@
                   <i class="fas fa-cart-shopping" style="color: #F7931e; scale: 1.5;" ></i>
                     <span class="position-absolute badge text-bg-primary rounded-circle d-flex align-items-center justify-content-center text-white " style="top: -5px; left: 15px; height: 15px; min-width: 15px; width:15px ;">3</span>
                 </a>
-                <a href="login-register-forms.html" class="my-auto">
-                    <i class="fas fa-user fa-2x " style="color: #F7931e; scale: 0.9;"></i>
+                <a href="#" class="my-auto">
+                  <img src="img/userProfile.png" alt="user icon" id="user-icon" class="user-icon" onclick="checkLoginStatus()" style="width: 35px; height: 35px;">  
                 </a>
             </div>
         </div>
     </div>
 </nav>
 <!-- Navbar End -->
-  <!-- Modal Search Start -->
-  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content rounded-0">
-            <div class="modal-header">
-                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex align-items-center">
-                <div class="input-group w-75 mx-auto d-flex">
+ <!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content rounded-0">
+          <div class="modal-header">
+              <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex flex-column align-items-center">
+              <div class="input-group w-75 mx-auto d-flex">
                   <span id="search-icon" class="input-group-text">
-                    <!-- Dropdown Menu for Category -->
-                    <div class="dropdown">
-                      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Category
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Clothes</a></li>
-                        <li><a class="dropdown-item" href="#">Jewelry</a></li>
-                        <li><a class="dropdown-item" href="#">Shoes</a></li>
-                        <li><a class="dropdown-item" href="#">Bags</a></li>
-                      </ul>
-                    </div>
+                      <!-- Dropdown Menu for Category -->
+                      <div class="dropdown">
+                          <button class="btn dropdown-toggle" type="button" id="categoryButton" data-bs-toggle="dropdown" aria-expanded="false">
+                              Category
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="categoryButton">
+                              <li><a class="dropdown-item" href="#" data-category="clothes">Clothes</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="jewelry">Jewelry</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="shoes">Shoes</a></li>
+                              <li><a class="dropdown-item" href="#" data-category="bags">Bags</a></li>
+                          </ul>
+                      </div>
                   </span>
-                    <input type="search " class="form-control " placeholder="Search" aria-describedby="search-icon-1">
-                    <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
-                </div>
-            </div>
-        </div>
-    </div>
+                  <input type="search" class="form-control" placeholder="Search" id="searchInput" aria-describedby="search-icon-1">
+                  <span id="search-icon" class="input-group-text model-search-icon p-3"><i class="fa fa-search" style="color: white;"></i></span>
+              </div>
+
+              <!-- Search Results (Cards will be inserted here) -->
+              <div class="container  w-75 mt-4" id="searchResults">
+              
+                  <!-- Cards will appear here dynamically -->
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 <!-- Modal Search End -->
-
 
 
 <section class=" py-5 text-center justify-content-center">
@@ -142,7 +147,7 @@
    
 </section>
 
-  <section class="container my-5">
+  <section class="container my-5 ">
     <h3 class="text-center mt-5">Our Team</h3>
     
     <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -167,7 +172,7 @@
           </div>
         </div>
         <div class="carousel-item">
-            <div class="row text-center justify-content-center m-5">
+            <div class="row text-center justify-content-center  m-5">
                 <div class="col-md-3 team-member-card bg-light m-3">
                   <img src="img/members/4.jpg" class="img-fluid rounded-circle" alt="Person 1">
                   <h5 class="mt-3">Somaya Ataie</h5>
@@ -182,11 +187,11 @@
         </div>
       </div>
       <a class="carousel-control-prev" href="#teamCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 30px; height: 30px; background-color: #ccb397;border:1px solid #ccb397 ; border-radius: 45px;" ></span>
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 30px; height: 30px; background-color: #ccb397;border:1px solid #ccb397 ; border-radius: 45px;"></span>
         <span class="visually-hidden">Previous</span>
       </a>
       <a class="carousel-control-next" href="#teamCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true " style="width: 30px; height: 30px; background-color: #ccb397;border:1px solid #ccb397 ; border-radius: 45px;"></span>
+        <span class="carousel-control-next-icon" aria-hidden="true" style="width: 30px; height: 30px; background-color: #ccb397;border:1px solid #ccb397 ; border-radius: 45px;"></span>
         <span class="visually-hidden">Next</span>
       </a>
     </div>
@@ -239,5 +244,7 @@
   <!-- Footer End -->
 
   <script src="js/script.js"></script>
+  <script src="js/search.js"></script>
+
 </body>
 </html>
