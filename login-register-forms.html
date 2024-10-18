@@ -55,33 +55,44 @@
                     <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
                 </div>
             </div>
-            <form action="#">
+            <form action="#" id="registerForm" onsubmit="saveUserData(); return false;">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <input type="text" required>
+                    <input type="text" id="registerUsername" required>
                     <label for="">Username</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
+                    <input type="email" id="registerEmail" required>
                     <label for="">Email</label>
                 </div>
                 <div class="input-box">
+                    <span class="icon"><ion-icon name="call"></ion-icon></span>
+                    <input type="text" required id="registerCall">
+                    <label for="">Phone</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="location"></ion-icon></span>
+                    <input type="text" required id="registerLocation">
+                    <label for="">Address</label>
+                </div>
+                <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
+                    <input type="password" id="registerPassword" required>
                     <label for="">Password</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
+                    <input type="password" id="registerConfirm" required>
                     <label for="">Confirm Password</label>
                 </div>
                 <div class="remember-forgot">
-                    <label for=""><input type="checkbox"> I agree to the terms & conditions.</label>
+                    <label for=""><input type="checkbox" required> I agree to the terms & conditions.</label>
                     
                 </div>
-                <button type="submit" class="btn form-btn">Register</button>
+                <button type="submit" class="btn form-btn" id="register">Register</button>
                 <div class="login-link">
+                    <div id="message"></div>
                     <p> Already have an account? <a href="#" class="login-link">Login</a></p>
                 </div>
             </form>
@@ -93,6 +104,65 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="js/script.js"></script>
+    <script>
+
+           // Change profile picture when user uploads an image
+            document.getElementById('input-file').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const profilePic = e.target.result;
+                        document.getElementById('Profile-pic').src = profilePic;
+
+                        // Save the profile picture to localStorage
+                        localStorage.setItem('profilePic', profilePic);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+
+
+
+        // Save user data and validate form
+        function saveUserData() {
+            const username = document.getElementById('registerUsername').value;
+            const email = document.getElementById('registerEmail').value;
+            const phone = document.getElementById('registerCall').value;
+            const address = document.getElementById('registerLocation').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('registerConfirm').value;
+    
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                // document.getElementById('message').innerHTML = "<p style='color: red;'>Passwords do not match!</p>";
+                return false;
+            }
+    
+            // Save user data to localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
+            localStorage.setItem('phone', phone);
+            localStorage.setItem('address', address);
+            localStorage.setItem('password', password);
+    
+
+              // Set login boolean to true
+            localStorage.setItem('isLoggedIn', true);
+
+            // Redirect to user profile after registration or login
+            window.location.href = 'userprofile.html';
+           
+            alert("Registration successful!");
+
+            // document.getElementById('message').innerHTML = "<p style='color: green;'>Registration successful!</p>";
+            return true;
+        }
+         
+    </script>
+    
 
 </body>
 </html>
