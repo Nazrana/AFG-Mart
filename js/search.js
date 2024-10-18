@@ -105,7 +105,7 @@ function filterResults() {
                     <span>${item.price}</span>
                 </div>
                 <div class="col-2 m-auto">
-                    <button data-index="${index}" class="btn btn-warning add-cart-search-btn">Add Cart</button>
+                    <button data-index="${index}" class="btn btn-warning add-cart-search-btn p-2" style="font-size:12px;>Add Cart</button>
                 </div>
             </div>
         `;
