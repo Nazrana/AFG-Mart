@@ -6,64 +6,86 @@
     <title>User-Profile</title>
     <!-- css link  -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .icon-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+    
+        .icon-logout {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+    
+        .icon-close a, .icon-logout a {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        </style>
 </head>
 <body>
     <div class=" myAccount-main-body">
     <div class="blob"></div>
     <div class="myAccount-wrapper">
         <span class="icon-close"><a href="index.html" style="color: white;"><ion-icon name="close"></ion-icon></a></span>
+        
+        
+        <span class="icon-logout">
+            <a href="index.html" onclick="logoutUser()" style="color: rgb(242, 104, 6);">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>
+        </span>        </span>
         <div class="form-box my-account">
-        <form action="#">
-            <h2>MY ACCOUNT</h2>
-            <!-- upload profile  -->
-            <div class="user-img">
-                <div class=" profile-card">
-                    <img src="img/user-img.jpg" alt="user-img" id="Profile-pic">
-                    <label class="profile-lable" for="input-file">Upload Profile</label>
-                    <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+        
+            <form action="#" id="registerForm" onsubmit="saveEditedData(); return false;">
+                <h2>MY ACCOUNT</h2>
+                <!-- upload profile  -->
+                <div class="user-img">
+                    <div class="profile-card">
+                        <img src="img/user-img.jpg" alt="user-img" id="Profile-pic">
+                        <label class="profile-lable" for="input-file">Upload Profile</label>
+                        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+                    </div>
                 </div>
-            </div>
-            <!-- input boxes  -->
-            <div class="input-box">
-                <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <input type="text" required>
-                <label for="">Username</label>
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                <input type="email" required>
-                <label for="">Email</label>
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="call"></ion-icon></span>
-                <input type="text" required>
-                <label for="">Phone</label>
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="location"></ion-icon></span>
-                <input type="text" required>
-                <label for="">Address</label>
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="text" required>
-                <label for="">Pervious Password</label>
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" required>
-                <label for="">Password</label>
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" required>
-                <label for="">Confirm Password</label>
-            </div>
-            <div class="remember-forgot">
-                <label for=""><input type="checkbox"> I agree to the terms & conditions.</label>
-            </div>
-            <button type="submit" class="btn form-btn pb-3">Update</button>
-        </form>
+                <!-- input boxes  -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" id="registerUsername1" required>
+                    <label for="">Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="registerEmail1" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="call"></ion-icon></span>
+                    <input type="text" id="registerCall1" required>
+                    <label for="">Phone</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="location"></ion-icon></span>
+                    <input type="text" id="registerLocation1" required>
+                    <label for="">Address</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="registerPassword1" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="registerConfirm1" required>
+                    <label for="">Confirm Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label for=""><input type="checkbox"> I agree to the terms & conditions.</label>
+                </div>
+                <button type="submit" class="btn form-btn pb-3">Update</button>
+            </form>
     </div>
 </div>
 </div>
@@ -72,6 +94,74 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- java script link  -->
     <script src="script.js"></script>
+
+
+    <script>
+             // Update profile picture when the user uploads a new one
+    document.getElementById('input-file').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const profilePic = e.target.result;
+                document.getElementById('Profile-pic').src = profilePic;
+
+                // Save the updated profile picture to localStorage
+                localStorage.setItem('profilePic', profilePic);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // On page load, populate the form with data from localStorage
+    window.onload = function() {
+        const profilePic = localStorage.getItem('profilePic');
+        if (profilePic) {
+            document.getElementById('Profile-pic').src = profilePic;
+        }
+
+        const username = localStorage.getItem('username');
+        const email = localStorage.getItem('email');
+        const phone = localStorage.getItem('phone');
+        const address = localStorage.getItem('address');
+        const password = localStorage.getItem('password');
+
+        if (username) document.getElementById('registerUsername1').value = username;
+        if (email) document.getElementById('registerEmail1').value = email;
+        if (phone) document.getElementById('registerCall1').value = phone;
+        if (address) document.getElementById('registerLocation1').value = address;
+        if (password) {
+            document.getElementById('registerPassword1').value = password;
+            document.getElementById('registerConfirm1').value = password;
+        }
+    }
+
+    // Save edited data back to localStorage
+    function saveEditedData() {
+        const username = document.getElementById('registerUsername1').value;
+        const email = document.getElementById('registerEmail1').value;
+        const phone = document.getElementById('registerCall1').value;
+        const address = document.getElementById('registerLocation1').value;
+        const password = document.getElementById('registerPassword1').value;
+
+        localStorage.setItem('username', username);
+        localStorage.setItem('email', email);
+        localStorage.setItem('phone', phone);
+        localStorage.setItem('address', address);
+        localStorage.setItem('password', password);
+
+        alert('Profile updated successfully!');
+    }
+
+ // Logout function
+ function logoutUser() {
+        localStorage.clear(); // Clear all stored data
+        alert('You have been logged out!');
+        window.location.href = 'login.html'; // Redirect to login page
+    }
+              
+                 
+    </script>
 </body>
 </html>
 
