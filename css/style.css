@@ -1158,17 +1158,6 @@ background: linear-gradient(to right,#c37e0f,#ffc108);
   display: block;
 }
 
-/* our team section*/
-
-.team-member-img{
-  position: relative;
-  border-radius: 50% !important;
-  width: 150px;
-  height: 150px;
-  top: -30px;
- 
-
-}
 .team-member-card{
   border: 1px solid #F7931e !important;
   border-radius: 10% !important;
