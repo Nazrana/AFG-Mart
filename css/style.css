@@ -1177,15 +1177,10 @@ background: linear-gradient(to right,#c37e0f,#ffc108);
 
   justify-content: center;
   text-align: center;
-  
-  
 }
 .card-body-2 p{
   font-size: 9px;
 }
-.contact-info p{
-  font-size: smaller;
-  padding-left: 40px;
-}
+
 
 
